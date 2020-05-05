@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>陪伴是最长情的告白</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/calendar.min.css" />
+	<body>
+		<div id='cale'></div>
+	</body>
+	<script type="application/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="application/javascript" src="js/calendar.min.js"></script>
+	<script>
+		var cale = $("#cale").loadCalendar({
+			"isZhGlo":false,
+			"selectNowStyle":{'background-color':'red'},
+			"doSomethingMouseoverFun":doSomethingMouseoverFun,
+			"selectArry":[{year:2020,month:5,day:10}],
+			"changeTimeFun":changeTimeFun,
+			"selectCaleFun":selectCaleFun
+		});
+		function doSomethingMouseoverFun(time){
+			return time;
+		}
+		function changeTimeFun(year,month){
+			cale.selectFreshFun([{year:2020,month:5,day:11},{year:2020,month:5,day:20}]);
+		}
+		function selectCaleFun(year,month,day){
+			console.log(year+"_"+month+"_"+day);
+		}
+	</script>
+</html>
